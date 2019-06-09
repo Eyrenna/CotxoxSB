@@ -6,12 +6,15 @@ import javax.persistence.PersistenceContext;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.repository.Repository;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import encinas.CotxoxSB.domain.Carrera;
 import encinas.CotxoxSB.domain.Conductor;
+import encinas.CotxoxSB.repository.CarreraRepo;
 
 
 @RunWith(SpringRunner.class)
@@ -33,8 +36,8 @@ import encinas.CotxoxSB.domain.Conductor;
 
 public class CotxoxAppTests {
 
-//	@Autowired(required=false)
-//	CarreraRepo carreraRepo;
+	@Autowired(required=false)
+	CarreraRepo carreraRepo;
 //
 //	@Autowired(required=false)
 //	CarreraService carreraService;
@@ -77,16 +80,16 @@ public class CotxoxAppTests {
 		Assert.assertEquals("Samantha", carrera.getConductor().getNombre());
 	}
 
-//	/**
-//	 * Crea una classe CarreraRepo que sigui un repositori Spring Data
-//	 * per l'entitat Carrera
-//	 */
-//	@Test
-//	public void test_RepoCarerra_es_repositori() {
-//		Assert.assertNotNull(carreraRepo);
-//		Assert.assertTrue(carreraRepo instanceof Repository);
-//	}
-//
+	/**
+	 * Crea una classe CarreraRepo que sigui un repositori Spring Data
+	 * per l'entitat Carrera
+	 */
+	@Test
+	public void test_RepoCarerra_es_repositori() {
+		Assert.assertNotNull(carreraRepo);
+		Assert.assertTrue(carreraRepo instanceof Repository);
+	}
+
 //	/**
 //	 * Crea una classe CarreraService que sigui un component
 //	 * amb el rol de Service
