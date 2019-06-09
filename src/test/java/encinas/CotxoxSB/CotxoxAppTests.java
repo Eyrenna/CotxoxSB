@@ -15,6 +15,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import encinas.CotxoxSB.domain.Carrera;
 import encinas.CotxoxSB.domain.Conductor;
 import encinas.CotxoxSB.repository.CarreraRepo;
+import encinas.CotxoxSB.repository.ConductorRepo;
 import encinas.CotxoxSB.services.CarreraService;
 
 
@@ -43,9 +44,9 @@ public class CotxoxAppTests {
 	@Autowired(required=false)
 	CarreraService carreraService;
 
-//	@Autowired(required=false)
-//	ConductorRepo conductorRepo;
-//
+	@Autowired(required=false)
+	ConductorRepo conductorRepo;
+
 //	@Autowired(required=false)
 //	ConductorService conductorService;
 
@@ -112,16 +113,16 @@ public class CotxoxAppTests {
 		Assert.assertEquals("1234567890123456", carreraService.recuperaCarrera(idCarrera).getTarjetaCredito());
 	}
 
-//	/**
-//	 * Crea una classe ConductorRepo que sigui un repositori Spring Data
-//	 * per l'entitat Conductor
-//	 */
-//	@Test
-//	public void test_ConductorRepo_es_repositori() {
-//		Assert.assertNotNull(conductorRepo);
-//		Assert.assertTrue(conductorRepo instanceof Repository);
-//	}
-//
+	/**
+	 * Crea una classe ConductorRepo que sigui un repositori Spring Data
+	 * per l'entitat Conductor
+	 */
+	@Test
+	public void test_ConductorRepo_es_repositori() {
+		Assert.assertNotNull(conductorRepo);
+		Assert.assertTrue(conductorRepo instanceof Repository);
+	}
+
 //	/**
 //	 * Implementa el servei de l'entitat conductor i el seu repositori
 //	 * per a recuperar un conductor per la seva targeta de crèdit.
