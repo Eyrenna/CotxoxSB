@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import encinas.CotxoxSB.domain.Carrera;
 import encinas.CotxoxSB.domain.Conductor;
 
 
@@ -68,14 +69,14 @@ public class CotxoxAppTests {
 	 * Mapea la classe carrera per a reflecteixi l'esquema de la base de dades 
 	 */
 
-//	@Test
-//	public void test_mapping_carrera() {
-//		Carrera carrera = em.find(Carrera.class, 1L);
-//		Assert.assertNotNull(carrera);
-//		Assert.assertEquals("4916119711304546", carrera.getTarjetaCredito());
-//		Assert.assertEquals("Samantha", carrera.getConductor().getNombre());
-//	}
-//
+	@Test
+	public void test_mapping_carrera() {
+		Carrera carrera = em.find(Carrera.class, 1L);
+		Assert.assertNotNull(carrera);
+		Assert.assertEquals("4916119711304546", carrera.getTarjetaCredito());
+		Assert.assertEquals("Samantha", carrera.getConductor().getNombre());
+	}
+
 //	/**
 //	 * Crea una classe CarreraRepo que sigui un repositori Spring Data
 //	 * per l'entitat Carrera

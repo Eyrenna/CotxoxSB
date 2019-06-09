@@ -2,6 +2,8 @@ package encinas.CotxoxSB.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -12,11 +14,12 @@ import javax.persistence.Table;
 public class Carrera {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "c_id")
-	private Integer id = 0;
+	private Long id = null;
 
 	@Column(name = "c_tarjeta_credito")
-	private String tarjeta_credito = null;
+	private String tarjetaCredito = null;
 
 	@Column(name = "c_origen")
 	private String origen = null;
@@ -45,20 +48,20 @@ public class Carrera {
 
 //Getters y Setters
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public String getTarjeta_credito() {
-		return tarjeta_credito;
+	public String getTarjetaCredito() {
+		return tarjetaCredito;
 	}
 
-	public void setTarjeta_credito(String tarjeta_credito) {
-		this.tarjeta_credito = tarjeta_credito;
+	public void setTarjetaCredito(String tarjetaCredito) {
+		this.tarjetaCredito = tarjetaCredito;
 	}
 
 	public String getOrigen() {
