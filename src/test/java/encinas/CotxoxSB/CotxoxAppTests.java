@@ -15,6 +15,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import encinas.CotxoxSB.domain.Carrera;
 import encinas.CotxoxSB.domain.Conductor;
 import encinas.CotxoxSB.repository.CarreraRepo;
+import encinas.CotxoxSB.services.CarreraService;
 
 
 @RunWith(SpringRunner.class)
@@ -38,10 +39,10 @@ public class CotxoxAppTests {
 
 	@Autowired(required=false)
 	CarreraRepo carreraRepo;
-//
-//	@Autowired(required=false)
-//	CarreraService carreraService;
-//
+
+	@Autowired(required=false)
+	CarreraService carreraService;
+
 //	@Autowired(required=false)
 //	ConductorRepo conductorRepo;
 //
@@ -90,15 +91,15 @@ public class CotxoxAppTests {
 		Assert.assertTrue(carreraRepo instanceof Repository);
 	}
 
-//	/**
-//	 * Crea una classe CarreraService que sigui un component
-//	 * amb el rol de Service
-//	 */
-//	@Test
-//	public void test_carreraService_es_component() {
-//		Assert.assertNotNull(carreraService);
-//	}
-//
+	/**
+	 * Crea una classe CarreraService que sigui un component
+	 * amb el rol de Service
+	 */
+	@Test
+	public void test_carreraService_es_component() {
+		Assert.assertNotNull(carreraService);
+	}
+
 //	/**
 //	 * Utilitza els mètodes del repositori de carrera
 //	 * i del servei carrera per a fer persistent una carrera
