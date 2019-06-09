@@ -17,6 +17,7 @@ import encinas.CotxoxSB.domain.Conductor;
 import encinas.CotxoxSB.repository.CarreraRepo;
 import encinas.CotxoxSB.repository.ConductorRepo;
 import encinas.CotxoxSB.services.CarreraService;
+import encinas.CotxoxSB.services.ConductorService;
 
 
 @RunWith(SpringRunner.class)
@@ -47,8 +48,8 @@ public class CotxoxAppTests {
 	@Autowired(required=false)
 	ConductorRepo conductorRepo;
 
-//	@Autowired(required=false)
-//	ConductorService conductorService;
+	@Autowired(required=false)
+	ConductorService conductorService;
 
 	@PersistenceContext
 	private EntityManager em;
@@ -123,18 +124,18 @@ public class CotxoxAppTests {
 		Assert.assertTrue(conductorRepo instanceof Repository);
 	}
 
-//	/**
-//	 * Implementa el servei de l'entitat conductor i el seu repositori
-//	 * per a recuperar un conductor per la seva targeta de crèdit.
-//	 */
-//
-//	@Test
-//	public void test_recuperar_conductor() {
-//		Conductor conductor = conductorService.recuperarConductor("1111111111111111");
-//		Assert.assertNotNull(conductor);
-//		Assert.assertEquals("Samantha", conductor.getNombre());
-//	}
-//
+	/**
+	 * Implementa el servei de l'entitat conductor i el seu repositori
+	 * per a recuperar un conductor per la seva targeta de crèdit.
+	 */
+
+	@Test
+	public void test_recuperar_conductor() {
+		Conductor conductor = conductorService.recuperarConductor("4916119711304546");
+		Assert.assertNotNull(conductor);
+		Assert.assertEquals("Samantha", conductor.getNombre());
+	}
+
 //	/**
 //	 * Completa el codi del cas test test_save_conductor()
 //	 * per a afegir les conductores següents a la BBDD
