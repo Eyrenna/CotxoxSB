@@ -45,6 +45,17 @@ public class Carrera {
 	@ManyToOne
 	@JoinColumn(name = "c_conductor")
 	private Conductor conductor = null;
+	
+//Constructores
+	
+	public Carrera() {
+	}
+	
+	public Carrera(String tarjetaCredito, String origen, String destino) {
+		this.tarjetaCredito = tarjetaCredito;
+		this.origen = origen;
+		this.destino = destino;
+	}
 
 //Getters y Setters
 
